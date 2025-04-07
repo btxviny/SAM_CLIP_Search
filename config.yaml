@@ -1,0 +1,58 @@
+images:
+  - "test_images_for_mlflow/1.png"
+  - "test_images_for_mlflow/2.png"
+  - "test_images_for_mlflow/3.png"
+
+queries:
+  - "bed"
+  - "chair"
+  - "bookcase"
+  - "jacket"
+  - "poster"
+  - "blanket"
+  - "Vinyl LP"
+  - "wall art"
+  - "person"
+  - "window"
+
+sam_configs:
+  - name: "default"
+    points_per_side: 32
+    pred_iou_thresh: 0.88
+    stability_score_thresh: 0.95
+    box_nms_thresh: 0.7
+    crop_n_layers: 0
+    min_mask_region_area: 0
+
+  - name: "high_recall"
+    points_per_side: 64
+    pred_iou_thresh: 0.85
+    stability_score_thresh: 0.90
+    box_nms_thresh: 0.3
+    crop_n_layers: 1
+    min_mask_region_area: 100
+
+  - name: "aggressive"
+    points_per_side: 128
+    pred_iou_thresh: 0.8
+    stability_score_thresh: 0.85
+    box_nms_thresh: 0.5
+    crop_n_layers: 2
+    min_mask_region_area: 200
+
+  - name: "balanced"
+    points_per_side: 64
+    pred_iou_thresh: 0.85
+    stability_score_thresh: 0.92
+    box_nms_thresh: 0.6
+    crop_n_layers: 1
+    min_mask_region_area: 50
+
+  - name: "precision"
+    points_per_side: 128
+    pred_iou_thresh: 0.9
+    stability_score_thresh: 0.93
+    box_nms_thresh: 0.4
+    crop_n_layers: 1
+    min_mask_region_area: 150
+
