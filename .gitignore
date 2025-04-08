@@ -2,6 +2,7 @@
 *.png
 *.pcd
 *.npy
+*.env
 /vector_store
 /mlruns
 mlflow.db
