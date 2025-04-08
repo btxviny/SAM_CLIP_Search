@@ -22,37 +22,44 @@ sam_configs:
     stability_score_thresh: 0.95
     box_nms_thresh: 0.7
     crop_n_layers: 0
-    min_mask_region_area: 0
+    min_mask_region_area: 150
 
-  - name: "high_recall"
-    points_per_side: 64
-    pred_iou_thresh: 0.85
-    stability_score_thresh: 0.90
-    box_nms_thresh: 0.3
-    crop_n_layers: 1
-    min_mask_region_area: 100
-
-  - name: "aggressive"
-    points_per_side: 128
-    pred_iou_thresh: 0.8
-    stability_score_thresh: 0.85
+  - name: "lowres_precision"
+    points_per_side: 32
+    pred_iou_thresh: 0.92
+    stability_score_thresh: 0.95
     box_nms_thresh: 0.5
-    crop_n_layers: 2
-    min_mask_region_area: 200
+    crop_n_layers: 0
+    min_mask_region_area: 150
 
-  - name: "balanced"
-    points_per_side: 64
-    pred_iou_thresh: 0.85
-    stability_score_thresh: 0.92
-    box_nms_thresh: 0.6
+  - name: "lowres_high_recall"
+    points_per_side: 32
+    pred_iou_thresh: 0.7
+    stability_score_thresh: 0.85
+    box_nms_thresh: 0.3
     crop_n_layers: 1
     min_mask_region_area: 50
 
-  - name: "precision"
-    points_per_side: 128
-    pred_iou_thresh: 0.9
-    stability_score_thresh: 0.93
+  - name: "lowres_balanced"
+    points_per_side: 32
+    pred_iou_thresh: 0.85
+    stability_score_thresh: 0.9
     box_nms_thresh: 0.4
     crop_n_layers: 1
-    min_mask_region_area: 150
+    min_mask_region_area: 100
 
+  - name: "lowres_aggressive"
+    points_per_side: 32
+    pred_iou_thresh: 0.8
+    stability_score_thresh: 0.85
+    box_nms_thresh: 0.6
+    crop_n_layers: 2
+    min_mask_region_area: 200
+
+  - name: "lowres_minimal"
+    points_per_side: 16
+    pred_iou_thresh: 0.75
+    stability_score_thresh: 0.8
+    box_nms_thresh: 0.5
+    crop_n_layers: 0
+    min_mask_region_area: 0

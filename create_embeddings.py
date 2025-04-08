@@ -4,10 +4,11 @@ import cv2
 import numpy as np
 import clip
 from PIL import Image
+from loguru import logger
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
-print(f"Loaded CLIP onto device: {device}")
+logger.info(f"Loaded CLIP onto device: {device}")
 
 
 def random_perspective(image, max_warp=0.1):
@@ -64,6 +65,7 @@ def create_image_ebeddings(images_path = "./images"):
         image_path = os.path.join(images_path, image_name)
         image_embedding = embed_image(image_path, model, preprocess)
         np.save(f"./embeddings/{image_name[:-4]}.npy", image_embedding)
+    logger.info("Successfully created object embeddings")
 
 if __name__ == "__main__":
     create_image_ebeddings()
